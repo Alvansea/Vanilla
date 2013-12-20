@@ -1,0 +1,100 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A0AE34EC-7B54-4413-8C2E-B523987378CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vanilla</RootNamespace>
+    <AssemblyName>Vanilla</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\TableCache.cs" />
+    <Compile Include="Data\Comb.cs" />
+    <Compile Include="Data\Configuration.cs" />
+    <Compile Include="Data\DataDictionary.cs" />
+    <Compile Include="Data\DataStore.cs" />
+    <Compile Include="Data\DataObject.cs" />
+    <Compile Include="Cache\ICacheAdapter.cs" />
+    <Compile Include="Cache\IDataCache.cs" />
+    <Compile Include="Data\IEventLogger.cs" />
+    <Compile Include="Data\InvalideDataTypeException.cs" />
+    <Compile Include="Data\ObjectColumn.cs" />
+    <Compile Include="Data\ObjectTable.cs" />
+    <Compile Include="Dialect\MsSql2005Dialect.cs" />
+    <Compile Include="Dialect\MySQLDialect.cs" />
+    <Compile Include="Dialect\OracleDialect.cs" />
+    <Compile Include="Dialect\SqlDialect.cs" />
+    <Compile Include="Dialect\DialectFactory.cs" />
+    <Compile Include="Utility\Evaluator.cs" />
+    <Compile Include="Utility\HtmlCrawler.cs" />
+    <Compile Include="Utility\ImageHelper.cs" />
+    <Compile Include="Utility\Json.cs" />
+    <Compile Include="Utility\Security.cs" />
+    <Compile Include="Utility\Text.cs" />
+    <Compile Include="Cache\CacheContainer.cs" />
+    <Compile Include="Data\Session.cs" />
+    <Compile Include="Cache\ObjectCache.cs" />
+    <Compile Include="Data\Query.cs" />
+    <Compile Include="Data\ConditionNode.cs" />
+    <Compile Include="Data\ConditionSet.cs" />
+    <Compile Include="Data\DataUtility.cs" />
+    <Compile Include="Utility\Repository.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
